@@ -34,6 +34,7 @@ Figure 1. Data augmentation code
 ## Training the network
 
   With the data successfully pre-processed it was time to train the network. I had seen on some tutorials provisioned by Google [12] and others that training : test data split is typically between 70 : 30 and 80 : 20. At first I used a training split of 80:20 however this resulted in quite severe overfitting. After some toying around I found settled on a 75:25 split on the data and this yielded the results seen in Figure 2. The data split was performed randomly on the images using train_test_split module from scikitlearn. The training was executing on an anaconda environment in order for the necessary packages to be imported correctly as there was compatibility issues between Tensorflow and Python 3.7 causing program errors. On my desktop the training time took about 60 – 90 minutes and on my laptop, it took 120 – 160 minutes.
+  
   As can be seen from the data the higher validation loss compared to the training loss suggest some overfitting and this becomes alarming at around 50 epochs, however this value falls dramatically following this and settles down to a value not much greater than the training loss at 100 epochs, so whilst there is still some overfitting it is not negligible to the network. I believe this to be caused by some superstitions learned in the training data that don’t have a true basis in reality and thus causing the difference to the validation data.
 
 # Results
